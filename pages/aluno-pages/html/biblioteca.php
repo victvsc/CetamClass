@@ -29,30 +29,30 @@ function exibirNomeUsuario() {
     <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"rel="stylesheet">
     <link rel="stylesheet" href="../css/biblioteca.css">
 </head>
 <style>
-    .custom-btn {
-        border-radius: 0.375rem;
-        border: 2px solid #00FF7F;
-        /* Borda azul padrão do Bootstrap */
-        background-color: #00FF7F;
-        /* Fundo transparente */
-        color: #006400;
-        /* Texto da cor da borda */
-        transition: background-color 0.3s, color 0.3s;
-        /* Transição suave para o hover */
-    }
+      .custom-btn {
+    border-radius: 0.375rem;
+    border: 2px solid #1e90ff;
+    /* Borda em azul claro */
+    background-color: #1e90ff;
+    /* Fundo em azul claro */
+    color: white;
+    /* Texto branco */
+    transition: background-color 0.3s, color 0.3s;
+    /* Transição suave para o hover */
+}
 
-    .custom-btn:hover {
-        border: 2px solid #006400;
-        background-color: #006400;
-        /* Fundo preenchido ao passar o mouse */
-        color: white;
-        /* Cor do texto ao passar o mouse */
-    }
+.custom-btn:hover {
+    background-color: #1c86ee;
+    /* Fundo em azul um pouco mais escuro */
+    border-color: #1c86ee;
+    /* Borda em azul escuro */
+    color: white;
+    /* Texto branco */
+}
 </style>
 <body>
     <!-- Navbar -->
@@ -81,10 +81,8 @@ function exibirNomeUsuario() {
       <label for="nav-footer-toggle"><i class="fas fa-caret-up"></i></label>
     </div>
     <div id="nav-footer-content">
-                <button class="custom-btn" onclick="window.location.href='../../../includes/logout.php'">Sair</button>
-            </div>
-    <div id="nav-footer-content">
-    </div>
+        <button class="custom-btn" onclick="window.location.href='../../../includes/logout.php'">Sair</button>
+   </div>
   </div>
 </div>
     <div class="content-carousel">
@@ -117,9 +115,9 @@ function exibirNomeUsuario() {
 
 <!-- partial -->
 <script type="text/javascript" src="../../moderador-pages/js/bootstrap.js"></script>
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-            <script type="text/javascript" src="../../moderador-pages/js/codigos.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="../../moderador-pages/js/codigos.js"></script>
 </body>
 </body>
 </html>

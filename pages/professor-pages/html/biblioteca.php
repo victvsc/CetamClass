@@ -67,7 +67,7 @@ if (isset($_SESSION['user_id'])) {
     <div class="nav-button"><i class="fas fa-book"></i><span><a href="./diario.php">Diário</a></span></div>
     <div class="nav-button"><i class="fas fa-folder"></i><span><a href="./germat.php">Gerenciar Materiais</a></span></div>
     <hr/>
-    <div class="nav-button"><i class="fas fa-book"></i><span><a href="./gerativ.php">Gerenciar Atividades</a></span></div>
+    <div class="nav-button"><i class="fas fa-book"></i><span><a href="./turvit.php">Turma Virtual</a></span></div>
     <div class="nav-button"><i class="fas fa-book-open"></i><span><a href="./biblioteca.php">Biblioteca</a></span></div>
     <div class="nav-button"><i class="fas fa-exclamation-circle"></i><span><a href="./avisos.php">Avisos</a></span></div>
     <hr/>
@@ -81,13 +81,11 @@ if (isset($_SESSION['user_id'])) {
       <label for="nav-footer-toggle"><i class="fas fa-caret-up"></i></label>
     </div>
     <div id="nav-footer-content">
-                <button class="custom-btn" onclick="window.location.href='../../../includes/logout.php'">Sair</button>
-            </div>
-    <div id="nav-footer-content">
+      <button class="custom-btn" onclick="window.location.href='../../../includes/logout.php'">Sair</button>
     </div>
   </div>
 </div>
-    <div class="content-carousel">
+<div class="content-carousel">
     <!-- Carrossel -->
     <div class="carousel-container">
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
@@ -112,13 +110,14 @@ if (isset($_SESSION['user_id'])) {
                 <span class="visually-hidden">Próximo</span>
             </button>
         </div>
-        <a href="#" class="access-button">Acessar</a>
+        <a href="https://www.baixelivros.com.br" target="_blank" class="access-button">Acessar</a>
     </div>
 
-    <!-- Script do Bootstrap -->
-    <script type="text/javascript" src="../../moderador-pages/js/bootstrap.js"></script>
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-            <script type="text/javascript" src="../../moderador-pages/js/codigos.js"></script>
+<!-- partial -->
+<script type="text/javascript" src="../../moderador-pages/js/bootstrap.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="../../moderador-pages/js/codigos.js"></script>
+</body>
 </body>
 </html>

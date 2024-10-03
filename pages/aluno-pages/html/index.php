@@ -18,153 +18,130 @@ function exibirNomeUsuario() {
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>CetamClass - Aluno</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Aluno</title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Josefin Sans', sans-serif;
-            background-color: #f8f9fa; /* Cor de fundo */
-        }
-
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Escurecimento do fundo */
-            z-index: 1040; /* Abaixo do carrossel */
-            display: none; /* Inicialmente oculto */
-        }
-
-        .carousel-container {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1050; /* Para garantir que fique acima de outros elementos */
-            width: 400px; /* Diminuir ainda mais a largura do carrossel */
-        }
-
-        .custom-badge {
-            background-color: #0052c5;
-        }
-
-        .custom-btn {
-            border-radius: 0.375rem;
-            border: 2px solid #1e90ff; /* Borda em azul claro */
-            background-color: #1e90ff; /* Fundo em azul claro */
-            color: white; /* Texto branco */
-            transition: background-color 0.3s, color 0.3s; /* Transição suave para o hover */
-        }
-
-        .custom-btn:hover {
-            background-color: #1c86ee; /* Fundo em azul um pouco mais escuro */
-            border-color: #1c86ee; /* Borda em azul escuro */
-            color: white; /* Texto branco */
-        }
-
-        .close-btn {
-            position: absolute;
-            top: -20px; /* Ajuste para ficar acima do carrossel */
-            right: -20px; /* Ajuste para ficar fora do carrossel */
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: white; /* Cor do botão de fechar */
-            cursor: pointer;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"rel="stylesheet">
+    <link rel="stylesheet" href="../css/biblioteca.css">
 </head>
-<body>
+<style>
+      .custom-btn {
+    border-radius: 0.375rem;
+    border: 2px solid #1e90ff;
+    /* Borda em azul claro */
+    background-color: #1e90ff;
+    /* Fundo em azul claro */
+    color: white;
+    /* Texto branco */
+    transition: background-color 0.3s, color 0.3s;
+    /* Transição suave para o hover */
+}
 
-<div class="overlay" id="overlay"></div>
-<div class="carousel-container" id="alertCarousel">
-    <button class="close-btn" id="closeButton">&times;</button>
-    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="../../../img/img1.jpeg" class="d-block w-100" alt="Imagem 1">
-            </div>
-            <div class="carousel-item">
-                <img src="../../../img/img2.jpeg" class="d-block w-100" alt="Imagem 2">
-            </div>
-            <div class="carousel-item">
-                <img src="../../../img/img3.jpeg" class="d-block w-100" alt="Imagem 3">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Próximo</span>
-        </button>
-    </div>
-</div>
+.custom-btn:hover {
+    background-color: #1c86ee;
+    /* Fundo em azul um pouco mais escuro */
+    border-color: #1c86ee;
+    /* Borda em azul escuro */
+    color: white;
+    /* Texto branco */
+}
+</style>
+<body>
 
 <!-- Navbar -->
 <div id="nav-bar">
-    <input id="nav-toggle" type="checkbox"/>
-    <div id="nav-header"><a id="nav-title" href="./index.php">Cetam<i></i>Class</a>
-        <label for="nav-toggle"><span id="nav-toggle-burger"></span></label>
-        <hr/>
+  <input id="nav-toggle" type="checkbox"/>
+  <div id="nav-header"><a id="nav-title" href="https://codepen.io" target="_blank">Cetam<i></i>Class</a>
+    <label for="nav-toggle"><span id="nav-toggle-burger"></span></label>
+    <hr/>
+  </div>
+  <div id="nav-content">
+    <div class="nav-button"><i class="fas fa-home"></i><span><a href="./index.php">Home</a></span></div>
+    <div class="nav-button"><i class="fas fa-book"></i><span><a href="./informacoesacad.php">Informações Acadêmcias</a></span></div>
+    <div class="nav-button"><i class="fas fa-folder"></i><span><a href="./turvirt.php">Turma Virtual</a></span></div>
+    <hr/>
+    <div class="nav-button"><i class="fas fa-table"></i><span><a href="./matrizcur.php">Matriz Curricular</a></span></div>
+    <div class="nav-button"><i class="fas fa-book-open"></i><span><a href="./biblioteca.php">Biblioteca</a></span></div>
+    <div class="nav-button"><i class="fas fa-exclamation-circle"></i><span><a href="./avisos.php">Avisos</a></span></div>
+    <hr/>
+    <div id="nav-content-highlight"></div>
+  </div>
+  <input id="nav-footer-toggle" type="checkbox"/>
+  <div id="nav-footer">
+    <div id="nav-footer-heading">
+     
+      <div id="nav-footer-titlebox"><a id="nav-footer-title" href="https://codepen.io/uahnbu/pens/public" target="_blank"><?php echo exibirNomeUsuario($conn); ?></a><span id="nav-footer-subtitle">Aluno</span></div>
+      <label for="nav-footer-toggle"><i class="fas fa-caret-up"></i></label>
     </div>
-    <div id="nav-content">
-        <div class="nav-button"><i class="fas fa-home"></i><span><a href="./index.php">Home</a></span></div>
-        <div class="nav-button"><i class="fas fa-book"></i><span><a href="./informacoesacad.php">Informações Acadêmicas</a></span></div>
-        <hr/>
-        <div class="nav-button"><i class="fas fa-folder"></i><span><a href="./turvirt.php">Turma Virtual</a></span></div>
-        <div class="nav-button"><i class="fas fa-table"></i><span><a href="./matrizcur.php">Matriz Curricular</a></span></div>
-        <div class="nav-button"><i class="fas fa-book-open"></i><span><a href="./biblioteca.php">Biblioteca</a></span></div>
-        <div class="nav-button"><i class="fas fa-exclamation-circle"></i><span><a href="./avisos.php">Avisos</a></span></div>
-        <hr/>
-        <div id="nav-content-highlight"></div>
-    </div>
-    <input id="nav-footer-toggle" type="checkbox"/>
-    <div id="nav-footer">
-        <div id="nav-footer-heading">
-            <div id="nav-footer-titlebox"><a id="nav-footer-title" href="#"><?php echo exibirNomeUsuario(); ?></a><span id="nav-footer-subtitle">Aluno</span></div>
-            <label for="nav-footer-toggle"><i class="fas fa-caret-up"></i></label>
-        </div>
-        <div id="nav-footer-content">
-            <button class="custom-btn" id="logoutButton">Sair</button>
-        </div>
-    </div>
+    <div id="nav-footer-content">
+        <button class="custom-btn" onclick="window.location.href='../../../includes/logout.php'">Sair</button>
+   </div>
+  </div>
 </div>
 
 <!-- Conteúdo Principal -->
-<div class="content">
-    <h1><strong>Olá, <?php echo exibirNomeUsuario(); ?>! <span class="badge badge-pill custom-badge" style="color: white;font-size: 15px;">Bem-vindo(a) ao CetamClass</span></strong></h1>
+<div class="container mt-4">
+    <h1>Bem-vindo, <?php echo exibirNomeUsuario(); ?>!</h1>
+    <div class="row">
+        <!-- Avisos -->
+        <div class="col-md-6">
+            <div class="card custom-card">
+                <div class="card-header">
+                    <h5>Avisos Importantes</h5>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Não se esqueça da reunião na próxima terça-feira às 14h.</li>
+                        <li>Os resultados das provas já estão disponíveis.</li>
+                        <li>O prazo para entrega de trabalhos é na próxima sexta-feira.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Notas -->
+        <div class="col-md-6">
+            <div class="card custom-card">
+                <div class="card-header">
+                    <h5>Minhas Notas</h5>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Matemática: 8.5</li>
+                        <li>Português: 9.0</li>
+                        <li>História: 7.5</li>
+                        <li>Ciências: 10.0</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Acesso Rápido -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card custom-card">
+                <div class="card-header">
+                    <h5>Acesso Rápido</h5>
+                </div>
+                <div class="card-body">
+                    <a class="btn btn-primary" href="./turvirt.php">Acessar Turma Virtual</a>
+                    <a class="btn btn-secondary" href="./biblioteca.php">Visitar Biblioteca</a>
+                    <a class="btn btn-success" href="./matrizcur.php">Ver Matriz Curricular</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script>
-    // Mostrar o carrossel e o fundo escurecido
-    document.getElementById('alertCarousel').style.display = 'block';
-    document.getElementById('overlay').style.display = 'block';
-
-    document.getElementById('logoutButton').addEventListener('click', function() {
-        document.getElementById('alertCarousel').style.display = 'block'; // Mostra o carrossel
-        document.getElementById('overlay').style.display = 'block'; // Mostra o fundo escurecido
-    });
-
-    // Fechar o carrossel
-    document.getElementById('closeButton').addEventListener('click', function() {
-        document.getElementById('alertCarousel').style.display = 'none'; // Esconde o carrossel
-        document.getElementById('overlay').style.display = 'none'; // Esconde o fundo escurecido
-    });
-</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

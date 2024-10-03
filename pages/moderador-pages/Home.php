@@ -27,7 +27,7 @@ AS turno, COUNT(a.matricula) AS total_alunos
           FROM turma t
           LEFT JOIN aluno a ON t.id_turma = a.id_turma
           LEFT JOIN turno tn ON tn.id_turno = t.id_turno
-          GROUP BY tn.id_turno, t.id_turma";
+          GROUP BY tn.id_turno, t.id_turma;";
 $result1 = $conn->query($sql1);
 
 if (!$result1) {
@@ -45,17 +45,26 @@ if (!$result2) {
     die("Erro na consulta SQL 2: " . $conn->error);
 }
 
-$sql3 = "SELECT p.nome AS 'Professor',c.nome 
-AS 'Componente',t.nome 
-AS 'Turma',t.id_turma,COUNT(a.matricula) AS 'quantidade'FROM aluno a
-JOIN turma t
-ON t.id_turma = a.id_turma
-JOIN professor p
-ON p.id_turma = t.id_turma
-join componente c
-on c.id_professor=p.id_professor
-GROUP BY p.nome, t.nome
-ORDER BY t.id_turma;";
+$sql3 = "SELECT 
+    p.nome AS 'Professor',
+    c.nome AS 'Componente',
+    t.nome AS 'Turma',
+    COUNT(a.matricula) AS 'Quantidade de Alunos'
+FROM 
+    turma t
+JOIN 
+    aluno a ON t.id_turma = a.id_turma
+JOIN 
+    comptur ct ON ct.id_turma = t.id_turma
+JOIN 
+    componente c ON c.id_componente = ct.id_componente
+JOIN 
+    professor p ON p.id_professor = c.id_professor
+GROUP BY 
+    p.nome, c.nome, t.nome
+ORDER BY 
+    t.nome;
+";
 $result3 = $conn->query($sql3);
 
 if (!$result2) {
@@ -80,120 +89,7 @@ $conn->close();
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet">
     <style>
-        .custom-badge{
-            background-color:#722F37;
-        }
-
-      
-        .custom-btn {
-        border-radius: 0.375rem;
-        border: 2px solid #a84551;
-        background-color: #a84551;
-        color: white;
-        transition: background-color 0.3s, color 0.3s;
-    }
-
-    .custom-btn:hover {
-        border: 2px solid #872e3a;
-        background-color: #872e3a;
-        /* Fundo preenchido ao passar o mouse */
-        color: white;
-        /* Cor do texto ao passar o mouse */
-    }
-
-        table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-table th,
-table td {
-  border: 1px solid #722F37;
-  padding: 10px;
-  text-align: left;
-}
-
-table th {
-  background-color: #722F37;
-  color: white;
-}
-
-table tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-table tr:hover {
-  background-color: #ddd;
-}
-
-.accordion-button:focus,
-.accordion-button:not(.collapsed) {
-  box-shadow: none !important;
-  border-color: #722F37 !important;
-  background-color: #722F37 !important;
-  color: white !important;
-}
-
-.accordion-button.collapsed:focus {
-  box-shadow: none !important;
-  background-color: #f8f9fa !important;
-  color: #722F37 !important;
-}
-
-
-.accordion-body {
-  border: 1px solid #722F37;
-}
-
-        .todo-container {
-            display: flex;
-            justify-content: space-between;
-        }
-        .todo-column {
-            width: 30%;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 10px;
-        }
-        .todo-card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 10px;
-            margin-bottom: 10px;
-            background-color: #f8f9fa;
-            position: relative;
-        }
-        .todo-card.completed {
-            background-color: #722F37;
-            text-decoration: line-through;
-        }
-        .add-task-card {
-            border: 2px dashed #722F37;
-            color: #722F37;
-            text-align: center;
-            cursor: pointer;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
-        .add-task-card:hover {
-            background-color: #722F37;
-            color: #ffff;
-        }
-        .task-actions {
-            display: flex;
-            gap: 5px;
-        }
-        .remove-task-btn {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            background: transparent;
-            border: none;
-            color: #dc3545;
-            font-size: 1.2em;
-            cursor: pointer;
-        }
+        
   </style>
 </head>
 
@@ -369,8 +265,7 @@ table tr:hover {
             <th>Professor (a) </th>
             <th>Componente</th>
             <th>Turma</th>
-            <th>ID</th>
-            <th>Qtd de Alunos</th>
+            <th>Quantidade de Alunos</th>
         </tr>
     </thead>
     <tbody>
@@ -381,8 +276,7 @@ table tr:hover {
                                 . "<td>" . $row['Professor'] . "</td>"
                                 . "<td>" . $row['Componente'] . "</td>"
                                 . "<td>" . $row['Turma'] . "</td>"
-                                . "<td>" . $row['id_turma'] . "</td>"
-                                . "<td>" . $row['quantidade'] . "</td>"
+                                . "<td>" . $row['Quantidade de Alunos'] . "</td>"
                                 . "</tr>";
             }
         } else {
@@ -391,13 +285,9 @@ table tr:hover {
         ?>
     </tbody>
 </table>
-
       </div>
     </div>
   </div>
-        
-</body>
-</html>
     </div>
 
   <script>  

@@ -22,7 +22,7 @@ function exibirNomeUsuario() {
 <html lang="pt-br" >
 <head>
   <meta charset="UTF-8">
-  <title>CetamClass - Aluno</title>
+  <title>Avisos - Aluno</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -32,29 +32,54 @@ function exibirNomeUsuario() {
         rel="stylesheet">
 </head>
 <style>
-  .custom-badge{
-            background-color:#0052c5;
-        }
-        .custom-btn {
+<style>
+  body {
+    font-family: 'Josefin Sans', sans-serif;
+  }
+
+  .custom-badge {
+    background-color: #0052c5;
+  }
+
+  .custom-btn {
     border-radius: 0.375rem;
     border: 2px solid #1e90ff;
-    /* Borda em azul claro */
     background-color: #1e90ff;
-    /* Fundo em azul claro */
     color: white;
-    /* Texto branco */
     transition: background-color 0.3s, color 0.3s;
-    /* Transição suave para o hover */
-}
+  }
 
-.custom-btn:hover {
+  .custom-btn:hover {
     background-color: #1c86ee;
-    /* Fundo em azul um pouco mais escuro */
     border-color: #1c86ee;
-    /* Borda em azul escuro */
     color: white;
-    /* Texto branco */
-}
+  }
+
+  /* Seção de Avisos */
+  .announcement-section {
+    padding: 20px;
+    background-color: #f8f9fa; /* Cor de fundo leve */
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+  }
+
+  .announcement {
+    background-color: rgba(255, 193, 24, 0.7);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .announcement i {
+    font-size: 24px;
+    margin-right: 10px;
+  }
+</style>
+
   </style>
 <body>
 <!-- partial:index.partial.html -->
@@ -82,17 +107,36 @@ function exibirNomeUsuario() {
       <label for="nav-footer-toggle"><i class="fas fa-caret-up"></i></label>
     </div>
     <div id="nav-footer-content">
-                <button class="custom-btn" onclick="window.location.href='../../../includes/logout.php'">Sair</button>
-            </div>
-    <div id="nav-footer-content">
+        <button class="custom-btn" onclick="window.location.href='../../../includes/logout.php'">Sair</button>
     </div>
   </div>
 </div>
 <!-- partial -->
+<div class="content">
+  <div class="announcement-section">
+    <h2>Avisos</h2>
+    <div class="announcement-container">
+      <div class="announcement">
+        <i class="fas fa-bell"></i>
+        <strong>Reunião de pais:</strong> próxima quinta-feira às 19h.
+      </div>
+      <div class="announcement">
+        <i class="fas fa-bell"></i>
+        <strong>Prazos:</strong> Entrega de trabalhos até 15 de outubro.
+      </div>
+      <div class="announcement">
+        <i class="fas fa-bell"></i>
+        <strong>Novidades:</strong> Novas atividades foram adicionadas à biblioteca.
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <script type="text/javascript" src="../../moderador-pages/js/bootstrap.js"></script>
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-            <script type="text/javascript" src="../../moderador-pages/js/codigos.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </body>
 </html>

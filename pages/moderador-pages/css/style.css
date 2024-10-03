@@ -1,4 +1,120 @@
 /* Conteúdo geral */
+.custom-badge{
+  background-color:#722F37;
+}
+
+
+.custom-btn {
+border-radius: 0.375rem;
+border: 2px solid #a84551;
+background-color: #a84551;
+color: white;
+transition: background-color 0.3s, color 0.3s;
+}
+
+.custom-btn:hover {
+border: 2px solid #872e3a;
+background-color: #872e3a;
+/* Fundo preenchido ao passar o mouse */
+color: white;
+/* Cor do texto ao passar o mouse */
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+}
+
+table th,
+table td {
+border: 1px solid #722F37;
+padding: 10px;
+text-align: left;
+}
+
+table th {
+background-color: #722F37;
+color: white;
+}
+
+table tr:nth-child(even) {
+background-color: #f2f2f2;
+}
+
+table tr:hover {
+background-color: #ddd;
+}
+
+.accordion-button:focus,
+.accordion-button:not(.collapsed) {
+box-shadow: none !important;
+border-color: #722F37 !important;
+background-color: #722F37 !important;
+color: white !important;
+}
+
+.accordion-button.collapsed:focus {
+box-shadow: none !important;
+background-color: #f8f9fa !important;
+color: #722F37 !important;
+}
+
+
+.accordion-body {
+border: 1px solid #722F37;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: space-between;
+}
+.todo-column {
+  width: 30%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+}
+.todo-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f8f9fa;
+  position: relative;
+}
+.todo-card.completed {
+  background-color: #722F37;
+  text-decoration: line-through;
+}
+.add-task-card {
+  border: 2px dashed #722F37;
+  color: #722F37;
+  text-align: center;
+  cursor: pointer;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.add-task-card:hover {
+  background-color: #722F37;
+  color: #ffff;
+}
+.task-actions {
+  display: flex;
+  gap: 5px;
+}
+.remove-task-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: transparent;
+  border: none;
+  color: #dc3545;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+
 .content {
   transition: margin-left 0.3s; /* Transição suave para o ajuste de margem */
   margin-left: 260px; /* Margem quando a sidebar está retraída */

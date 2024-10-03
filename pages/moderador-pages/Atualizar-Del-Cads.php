@@ -71,7 +71,7 @@ function displayResults($result, $table)
                 echo "<input type='hidden' name='table' value='$table'>";
                 echo "<input type='hidden' name='id_column' value='$primary_key_column'>";
                 echo "<input type='hidden' name='id_value' value='" . $row[$primary_key_column] . "'>";
-                echo "<button type='submit' name='delete' style='border:none;background-color:#004AAD;color:white;' class='rounded-pill'>Deletar</button>";
+                echo "<button type='submit' name='delete' style='border:none;background-color:#722F37;color:white;' class='rounded-pill'>Deletar</button>";
                 echo "</form>";
                 echo "</td>";
             } else {
@@ -160,29 +160,30 @@ function exibirNomeUsuario() {
     }
 
     table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-    }
+  width: 100%;
+  border-collapse: collapse;
+}
 
-    th,
-    td {
-        padding: 12px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-        background-color: white;
-        color: #004AAD;
-    }
+table th,
+table td {
+  border: 1px solid #722F37;
+  padding: 10px;
+  text-align: left;
+}
 
-    th {
-        background-color: #004AAD;
-        color: white;
-    }
+table th {
+  background-color: #722F37;
+  color: white;
+}
 
-    tr:hover#cont {
-        background-color: black !important;
-        color: white !important;
-    }
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
 
     .custom-btn {
         border-radius: 0.375rem;
@@ -199,6 +200,7 @@ function exibirNomeUsuario() {
         color: white;
         /* Cor do texto ao passar o mouse */
     }
+    
     </style>
 
 </head>
@@ -293,11 +295,19 @@ function exibirNomeUsuario() {
                             style="background-color: #722F37; color: white; border: none; width: 200px; appearance: none; padding-right: 30px;"
                             name="table" id="table">
                             <option value="default" selected>Opções</option>
-                            <option value="aluno">Alunos</option>
-                            <option value="professor">Professores</option>
-                            <option value="moderador">Moderadores</option>
-                            <option value="boletim">Boletim</option>
-                            <option value="curso">Cursos</option>
+                        <option value="aluno">Aluno</option>
+                        <option value="estado_m">Estado M</option>
+                        <option value="estado_c">Estado C</option>
+                        <option value="boletim">Boletim</option>
+                        <option value="componente">Componente</option>
+                        <option value="curso">Curso</option>
+                        <option value="moderador">Moderador</option>
+                        <option value="professor">Professor</option>
+                        <option value="turno">Turno</option>
+                        <option value="turma">Turma</option>
+                        <option value="usuario">Usuário</option>
+                        <option value="comptur">Comptur</option>
+                        <option value="profbol">Profbol</option>
                         </select>
                         <span
                             style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); pointer-events: none; color: white;">

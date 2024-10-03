@@ -22,7 +22,7 @@ function exibirNomeUsuario() {
 <html lang="pt-br" >
 <head>
   <meta charset="UTF-8">
-  <title>CetamClass - Professor</title>
+  <title>Turma Virtual - Aluno</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -33,24 +33,25 @@ function exibirNomeUsuario() {
         rel="stylesheet">
       <style>
          .custom-btn {
-        border-radius: 0.375rem;
-        border: 2px solid #00FF7F;
-        /* Borda azul padrão do Bootstrap */
-        background-color: #00FF7F;
-        /* Fundo transparente */
-        color: #006400;
-        /* Texto da cor da borda */
-        transition: background-color 0.3s, color 0.3s;
-        /* Transição suave para o hover */
-    }
+    border-radius: 0.375rem;
+    border: 2px solid #1e90ff;
+    /* Borda em azul claro */
+    background-color: #1e90ff;
+    /* Fundo em azul claro */
+    color: white;
+    /* Texto branco */
+    transition: background-color 0.3s, color 0.3s;
+    /* Transição suave para o hover */
+}
 
-    .custom-btn:hover {
-        border: 2px solid #006400;
-        background-color: #006400;
-        /* Fundo preenchido ao passar o mouse */
-        color: white;
-        /* Cor do texto ao passar o mouse */
-    }
+.custom-btn:hover {
+    background-color: #1c86ee;
+    /* Fundo em azul um pouco mais escuro */
+    border-color: #1c86ee;
+    /* Borda em azul escuro */
+    color: white;
+    /* Texto branco */
+}
       </style>
 </head>
 <body>
@@ -80,9 +81,7 @@ function exibirNomeUsuario() {
       <label for="nav-footer-toggle"><i class="fas fa-caret-up"></i></label>
     </div>
     <div id="nav-footer-content">
-                <button class="custom-btn" onclick="window.location.href='../../../includes/logout.php'">Sair</button>
-            </div>
-    <div id="nav-footer-content">
+        <button class="custom-btn" onclick="window.location.href='../../../includes/logout.php'">Sair</button>
     </div>
   </div>
 </div>

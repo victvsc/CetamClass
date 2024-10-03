@@ -22,7 +22,7 @@ function exibirNomeUsuario() {
 <html lang="pt-br" >
 <head>
   <meta charset="UTF-8">
-  <title>CetamClass - Aluno</title>
+  <title>Matriz Curricular - Aluno</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -112,9 +112,7 @@ function exibirNomeUsuario() {
       <label for="nav-footer-toggle"><i class="fas fa-caret-up"></i></label>
     </div>
     <div id="nav-footer-content">
-                <button class="custom-btn" onclick="window.location.href='../../../includes/logout.php'">Sair</button>
-            </div>
-    <div id="nav-footer-content">
+        <button class="custom-btn" onclick="window.location.href='../../../includes/logout.php'">Sair</button>
     </div>
   </div>
 </div>
