@@ -108,7 +108,7 @@ function exibirNomeUsuario() {
                 <span class="visually-hidden">Próximo</span>
             </button>
         </div>
-        <a href="#" class="access-button">Acessar</a>
+        <a href="https://www.baixelivros.com.br" target="_blank" class="access-button">Acessar</a>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
