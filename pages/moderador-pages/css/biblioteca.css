@@ -1,0 +1,66 @@
+@import url(/SideBar/pages/professor-pages/css/biblioteca.css);
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Poppins:wght@600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    margin: 50px auto;
+    position: relative;
+    padding-right: 100px;}
+
+.carousel-inner {
+    width: 100%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+}
+
+.access-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+    display: inline-block;
+    margin-top: 20px;
+    
+}
+
+.access-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Ajuste do carrossel para centralizar e deslocar um pouco para a direita */
+@media (min-width: 768px) {
+    .carousel-container {
+        margin-left: 20%;/
+    }
+}
+
+@media (max-width: 767px) {
+    .carousel-container {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 10%;
+    }
+}

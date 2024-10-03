@@ -1,0 +1,290 @@
+use teste;
+INSERT INTO usuario(id_usuario,nivel) VALUES
+(1,'Aluno'),
+(2,'Professor'),
+(3,'Moderador');
+
+
+
+INSERT INTO curso(id_curso,nome,carga)VALUES(7653,'Técnico em Informática', 1300);
+
+INSERT INTO curso(nome,carga)VALUES('Informática Avançada', 90),
+('Informática Básica',60),
+('Técnico em qualidade',1000);
+
+
+
+INSERT INTO turno(id_turno,descricao)Values(1,'Matutino'),
+(2,'Vespertino'),
+(3,'Noturno');
+
+
+
+INSERT INTO estado_m(sim,descricao)VALUES(1,'Trocou de turno'),
+(2,'Desistiu'),
+(3,'Cursando'),
+(4,'Formado');
+
+INSERT INTO estado_c(id_estado,descricao)VALUES(1,'Finalizado'),
+(2,'Em Andamento'),
+(3,'Interrompido'),
+(4,'Não Iniciado');
+
+INSERT INTO turma(id_turma,nome, id_turno, id_curso)
+VALUES
+(123,'TI1', 1, 7653),
+(126,'TI2', 2, 7653),
+
+(456,'IFA1',2, 7654),
+(458,'IFA2',3, 7654),
+
+(789,'IFB1',1, 7655),
+(790,'IFB2',2, 7655),
+
+(112,'TQ1', 2, 7656),
+(113,'TQ2',3, 7656);
+
+
+
+INSERT INTO moderador (id_moderador, nome, sobrenome, email, senha, telefone, id_usuario) VALUES
+(1234, 'Carlos', 'Silva', 'carlos.45@gmail.com', 'carlos123', '11987654321', 3),
+(5678, 'Maria', 'Oliveira', 'mariana.89@gmail.com', 'mariana123', '11987654322', 3),
+(9101, 'Ricardo', 'Pereira', 'ricardo.87@gmail.com', 'ricardo123', '11987654323', 3);
+
+
+INSERT INTO aluno (matricula, nome, sobrenome, email, senha, cpf, data_nasc, id_usuario, id_turma, sim) VALUES
+-- Turma 123
+(12345, 'João', 'Silva', 'joao@gmail.com', 'joao123', '101.202.303-44', '2005-12-01', 1, 123, 3),
+(56789, 'Carlos', 'Oliveira', 'carlos@gmail.com', 'carlos123', '505.606.707-88', '2001-08-30', 1, 123, 3),
+(90123, 'Gabriel', 'Santos', 'gabriel@gmail.com', 'gabriel123', '909.010.111-33', '1997-04-20', 1, 123, 3),
+(76543, 'Ricardo', 'Pereira', 'ricardo@gmail.com', 'ricardo123', '313.414.515-77', '1993-12-15', 1, 123, 3),
+(10987, 'Fábio', 'Lima', 'fabio@gmail.com', 'fabio123', '717.818.919-22', '1989-08-05', 1, 123, 3),
+(54322, 'Paulo', 'Almeida', 'paulo@gmail.com', 'paulo123', '111.222.333-44', '1985-04-15', 1, 123, 3),
+(98766, 'Renan', 'Costa', 'renan@gmail.com', 'renan123', '555.666.777-88', '1981-12-15', 1, 123, 3),
+(32110, 'Bruno', 'Ferreira', 'bruno@gmail.com', 'bruno123', '999.000.111-33', '1977-08-05', 1, 123, 3),
+
+-- Turma 456
+(23456, 'Maria', 'Nunes', 'maria@gmail.com', 'maria123', '202.303.404-55', '2004-11-15', 1, 456, 3),
+(67890, 'Fernando', 'Teixeira', 'fernando@gmail.com', 'fernando123', '606.707.808-99', '2000-07-05', 1, 456, 3),
+(12340, 'Beatriz', 'Melo', 'beatriz@gmail.com', 'beatriz123', '010.111.212-44', '1996-03-25', 1, 456, 3),
+(87654, 'Mariana', 'Cavalcanti', 'mariana@gmail.com', 'mariana123', '414.515.616-88', '1992-11-20', 1, 456, 3),
+(21098, 'Amanda', 'Barbosa', 'amanda@gmail.com', 'amanda123', '818.919.020-33', '1988-07-10', 1, 456, 3),
+(65433, 'Luana', 'Santos', 'luana@gmail.com', 'luana123', '222.333.444-55', '1984-03-20', 1, 456, 3),
+(98770, 'Aline', 'Cardoso', 'aline@gmail.com', 'aline123', '666.777.888-99', '1980-11-20', 1, 456, 3),
+(43221, 'Fernanda', 'Souza', 'fernanda@gmail.com', 'fernanda123', '000.111.222-44', '1976-07-10', 1, 456, 3),
+
+-- Turma 789
+(34567, 'Pedro', 'Dias', 'pedro@gmail.com', 'pedro123', '303.404.505-66', '2003-10-20', 1, 789, 3),
+(78901, 'Lucas', 'Fernandes', 'lucas@gmail.com', 'lucas123', '707.808.909-11', '1999-06-10', 1, 789, 3),
+(54321, 'Rafael', 'Pinho', 'rafael@gmail.com', 'rafael123', '111.212.313-55', '1995-02-28', 1, 789, 3),
+(98765, 'Thyago', 'Xavier', 'thyago@gmail.com', 'thiago123', '515.616.717-99', '1991-10-25', 1, 789, 3),
+(32109, 'Felipe', 'Assis', 'felipe@gmail.com', 'felipe123', '919.020.121-44', '1987-06-15', 1, 789, 3),
+(76544, 'Tiago', 'Cunha', 'tiago@gmail.com', 'tiago123', '333.444.555-66', '1983-02-25', 1, 789, 3),
+(10988, 'Rodrigo', 'Ramos', 'rodrigo@gmail.com', 'rodrigo123', '777.888.999-11', '1979-10-25', 1, 789, 3),
+
+-- Turma 112
+(45678, 'Ana', 'Silveira', 'ana@gmail.com', 'ana123', '404.505.606-77', '2002-09-25', 1, 112, 3),
+(89012, 'Juliana', 'Dantas', 'juliana@gmail.com', 'juliana123', '808.909.010-22', '1998-05-15', 1, 112, 3),
+(65432, 'Larissa', 'Moreira', 'larissa@gmail.com', 'larissa123', '212.313.414-66', '1994-01-31', 1, 112, 3),
+(98760, 'Renata', 'Freitas', 'renata@gmail.com', 'renata123', '616.717.818-11', '1990-09-30', 1, 112, 3),
+(43210, 'Natália', 'Gomes', 'natalia@gmail.com', 'natalia123', '020.121.222-55', '1986-05-20', 1, 112, 3),
+(87655, 'Camila', 'Alves', 'camila@gmail.com', 'camila123', '444.555.666-77', '1982-01-30', 1, 112, 3),
+(21099, 'Isabela', 'Santos', 'isabela@gmail.com', 'isabela123', '888.999.000-22', '1978-09-30', 1, 112, 3),
+
+-- Turma 126
+(12601, 'Alice', 'Martins', 'alice@gmail.com', 'alice123', '123.456.789-00', '2005-02-15', 1, 126, 3),
+(12602, 'Bruno', 'Lopes', 'bruno126@gmail.com', 'bruno126', '987.654.321-00', '2004-06-25', 1, 126, 3),
+(12603, 'Clara', 'Macedo', 'clara126@gmail.com', 'clara126', '111.222.333-00', '2003-09-10', 1, 126, 3),
+(12604, 'Daniel', 'Cardoso', 'daniel126@gmail.com', 'daniel126', '444.555.666-00', '2002-11-05', 1, 126, 3),
+
+-- Turma 458
+(45801, 'Eduardo', 'Nunes', 'eduardo458@gmail.com', 'eduardo458', '777.888.999-00', '2001-04-18', 1, 458, 3),
+(45802, 'Fernanda', 'Teixeira', 'fernanda458@gmail.com', 'fernanda458', '222.333.444-00', '2000-08-22', 1, 458, 3),
+(45803, 'Gustavo', 'Souza', 'gustavo458@gmail.com', 'gustavo458', '555.666.777-00', '1999-12-12', 1, 458, 3),
+(45804, 'Helena', 'Almeida', 'helena458@gmail.com', 'helena458', '888.999.000-00', '1998-03-30', 1, 458, 3),
+
+-- Turma 790
+(79001, 'Igor', 'Pereira', 'igor790@gmail.com', 'igor790', '123.321.456-00', '2005-01-20', 1, 790, 3),
+(79002, 'Júlia', 'Silva', 'julia790@gmail.com', 'julia790', '654.987.321-00', '2004-05-25', 1, 790, 3),
+(79003, 'Karla', 'Santos', 'karla790@gmail.com', 'karla790', '654.321.987-00', '2003-07-15', 1, 790, 3),
+(79004, 'Lucas', 'Alves', 'lucas790@gmail.com', 'lucas790', '789.654.123-00', '2002-10-30', 1, 790, 3),
+
+-- Turma 113
+(11301, 'Matheus', 'Silva', 'matheus113@gmail.com', 'matheus113', '789.123.456-00', '2001-02-11', 1, 113, 3),
+(11302, 'Natália', 'Souza', 'natalia113@gmail.com', 'natalia113', '456.789.123-00', '2000-06-18', 1, 113, 3),
+(11303, 'Otávio', 'Pereira', 'otavio113@gmail.com', 'otavio113', '987.654.789-00', '1999-09-27', 1, 113, 3),
+(11304, 'Patrícia', 'Costa', 'patricia113@gmail.com', 'patricia113', '123.987.654-00', '1998-11-14', 1, 113, 3);
+
+
+
+INSERT INTO professor (id_professor, nome, sobrenome, email, senha, telefone, id_usuario, id_turma) VALUES  
+(123456, 'Ana', 'Silva', 'ana.702@gmail.com', 'ana123', '11987654324', 2, 123),
+(234567, 'Bruno', 'Souza', 'bruno.902@gmail.com', 'bruno123', '11987654325', 2, 126),
+(345678, 'Clara', 'Oliveira', 'clara.176@gmail.com', 'clara123', '11987654326', 2, 456),
+(456789, 'Diego', 'Almeida', 'diego.764@gmail.com', 'diego123', '11987654327', 2, 458),
+(567890, 'Paula', 'Lima', 'paula.@gmail.com', 'paula123', '11987654328', 2, 789),
+(678901, 'João', 'Ferreira', 'joao.@gmail.com', 'joao123', '11987654329', 2, 790),
+(789012, 'Fernanda', 'Cavalcanti', 'fernanda.@gmail.com', 'fernanda123', '11987654330', 2, 112),
+(890123, 'Marcelo', 'Cardoso', 'marcelo.@gmail.com', 'marcelo123', '11987654331', 2, 113),
+(901234, 'Letícia', 'Moraes', 'leticia.@gmail.com', 'leticia123', '11987654332', 2, 123),
+(912345, 'Rodrigo', 'Teixeira', 'rodrigo.@gmail.com', 'rodrigo123', '11987654333', 2, 126);
+
+
+
+INSERT INTO componente(id_componente, nome, modulo, conteudo, duracao, id_professor) VALUES
+(1234, 'Programação Básica', 'M1', 'Fundamentos de programação',100, 123456);
+
+
+INSERT INTO componente(nome,modulo,conteudo,duracao,id_professor)VALUES('Redes de Computadores', 'M2', 'Introdução a redes',100, 234567),
+('Algoritmos Avançados', 'M1', 'Estruturas de dados',45, 345678),
+('Banco de Dados Avançado', 'M2', 'Modelagem de dados', 45, 456789),
+('Introdução à Informática', 'M1', 'Conceitos básicos de informática',30, 567890),
+('Pacote Office Básico', 'M2', 'Uso de ferramentas Office',30, 678901),
+('Controle de Qualidade', 'M1', 'Normas de qualidade',500, 789012),
+('Gestão de Projetos', 'M2', 'Ferramentas de gestão',500, 890123), -- 1241
+('Programação Básica', 'M1', 'Fundamentos de programação',100,234567),
+('Algoritmos Avançados', 'M1', 'Estruturas de dados',45, 456789),
+('Introdução à Informática', 'M1', 'Conceitos básicos de informática',30, 678901),
+('Controle de Qualidade', 'M1', 'Normas de qualidade',500,890123);
+
+INSERT INTO boletim (id_boletim,frequencia, n1, n2, n3, media, matricula, id_componente,obs) VALUES
+(1,85, 9.0,9.0,9.0,9.0, 45678, 1240,'');
+
+INSERT INTO boletim (frequencia, n1, n2, n3, media, matricula, id_componente,obs) VALUES
+-- turma 112
+(90, 8.5, 8.5, 8.5, 8.5, 89012, 1240, ''),
+(75, 7.0, 7.0, 7.0, 7.0, 65432, 1240, ''),
+(95, 9.5, 9.5, 9.5, 9.5, 98760, 1240, ''),
+(80, 8.0, 8.0, 8.0, 8.0, 43210, 1240, ''),
+(95, 9.5, 9.5, 9.5, 9.5, 87655, 1240, ''),
+(90, 9.0, 9.0, 9.0, 9.0, 21099, 1240, ''),
+
+-- Turma 113
+(90, 8.5, 8.5, 8.5, 8.5, 11301, 1245, ''),
+(75, 7.0, 7.0, 7.0, 7.0, 11302, 1245, ''),
+(95, 9.5, 9.5, 9.5, 9.5, 11303, 1245, ''),
+(80, 8.0, 8.0, 8.0, 8.0, 11304, 1245, ''),
+(95, 9.5, 9.5, 9.5, 9.5, 11301, 1245, ''),
+(90, 9.0, 9.0, 9.0, 9.0, 11302, 1245, ''),
+
+
+-- turma 123
+(85, 9.0, 9.0, 9.0, 9.0, 12345, 1234, ''),
+(90, 8.5, 8.5, 8.5, 8.5, 56789, 1234, ''),
+(75, 7.0, 7.0, 7.0, 7.0, 90123, 1234, ''),
+(95, 9.5, 9.5, 9.5, 9.5, 76543, 1234, ''),
+(80, 8.0, 8.0, 8.0, 8.0, 10987, 1234, ''),
+(85, 9.0, 9.0, 9.0, 9.0, 54322, 1234, ''),
+(80, 8.0, 8.0, 8.0, 8.0, 98766, 1234, ''),
+(75, 6.5, 6.5, 6.5, 6.5, 32110, 1234, ''),
+
+-- turma 126
+(85, 9.0, 9.0, 9.0, 9.0, 12601, 1242, ''),
+(90, 8.5, 8.5, 8.5, 8.5, 12602, 1242, ''),
+(75, 7.0, 7.0, 7.0, 7.0, 12603, 1242, ''),
+(95, 9.5, 9.5, 9.5, 9.5, 12604, 1242, ''),
+
+-- turma 456
+(85, 9.0, 9.0, 9.0, 9.0, 23456, 1236, ''),
+(90, 8.5, 8.5, 8.5, 8.5, 67890, 1236, ''),
+(75, 7.0, 7.0, 7.0, 7.0, 12340, 1236, ''),
+(95, 9.5, 9.5, 9.5, 9.5, 87654, 1236, ''),
+(80, 8.0, 8.0, 8.0, 8.0, 21098, 1236, ''),
+(90, 8.5, 8.5, 8.5, 8.5, 65433, 1236, ''),
+(85, 8.5, 8.5, 8.5, 8.5, 98770, 1236, ''),
+(88, 8.8, 8.8, 8.8, 8.8, 43221, 1236, ''),
+
+-- turma 458
+(85, 9.0, 9.0, 9.0, 9.0, 45801, 1243, ''),
+(90, 8.5, 8.5, 8.5, 8.5, 45802, 1243, ''),
+(75, 7.0, 7.0, 7.0, 7.0, 45803, 1243, ''),
+(95, 9.5, 9.5, 9.5, 9.5, 45804, 1243, ''),
+
+-- turma 789
+(85, 9.0, 9.0, 9.0, 9.0, 34567, 1238, ''),
+(90, 8.5, 8.5, 8.5, 8.5, 78901, 1238, ''),
+(75, 7.0, 7.0, 7.0, 7.0, 54321, 1238, ''),
+(95, 9.5, 9.5, 9.5, 9.5, 98765, 1238, ''),
+(80, 8.0, 8.0, 8.0, 8.0, 32109, 1238, ''),
+(75, 7.0, 7.0, 7.0, 7.0, 76544, 1238, ''),
+(80, 7.5, 7.5, 7.5, 7.5, 10988, 1238, ''),
+
+-- turma 790
+(85, 9.0, 9.0, 9.0, 9.0, 79001, 1244, ''),
+(90, 8.5, 8.5, 8.5, 8.5, 79002, 1244, ''),
+(75, 7.0, 7.0, 7.0, 7.0, 79003, 1244, ''),
+(95, 9.5, 9.5, 9.5, 9.5, 79004, 1244, '');
+
+INSERT INTO comptur (id_comptur, id_componente, id_turma, id_estado) VALUES
+(101, 1234, 123, 1),
+(102, 1235, 123, 2),
+(103, 1236, 456, 1),
+(104, 1237, 456, 2),
+(105, 1238, 789, 1),
+(106, 1239, 789, 2),
+(107, 1240, 112, 1),
+(108, 1241, 112, 2),
+(109, 1242, 126, 1),
+(110, 1243, 458, 1),
+(111, 1244, 790, 1),
+(112, 1245, 113, 1);
+
+INSERT INTO profbol(id_profbol, id_boletim, id_professor) VALUES
+(1001, 1, 123456),
+(1002, 2, 123456),
+(1003, 3, 123456),
+(1004, 4, 123456),
+(1005, 5, 123456),
+
+(1006, 6, 345678),
+(1007, 7, 345678),
+(1008, 8, 345678),
+(1009, 9, 345678),
+(1010, 10, 345678),
+
+(1011, 11, 567890),
+(1012, 12, 567890),
+(1013, 13, 567890),
+(1014, 14, 567890),
+(1015, 15, 567890),
+
+(1016, 16, 789012),
+(1017, 17, 789012),
+(1018, 18, 789012),
+(1019, 19, 789012),
+(1020, 20, 789012),
+
+(1021, 21, 234567),
+(1022, 22, 345678),
+(1023, 23, 456789),
+(1024, 24, 567890),
+(1025, 25, 678901),
+(1026, 26, 789012),
+(1027, 27, 890123),
+(1028, 28, 901234),
+(1029, 29, 912345),
+(1030, 30, 123456),
+
+-- Turma 126
+(1031, 31, 234567),
+(1032, 32, 234567),
+(1033, 33, 234567),
+(1034, 34, 234567),
+
+-- Turma 458
+(1035, 35, 456789),
+(1036, 36, 456789),
+(1037, 37, 456789),
+(1038, 38, 456789),
+
+-- Turma 790
+(1039, 39, 678901),
+(1040, 40, 678901),
+(1041, 41, 678901),
+(1042, 42, 678901),
+
+-- Turma 113
+(1043, 43, 890123),
+(1044, 44, 890123),
+(1045, 45, 890123),
+(1046, 46, 890123);

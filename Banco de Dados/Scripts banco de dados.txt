@@ -1,0 +1,150 @@
+    create database projetocetam;
+    use projetocetam;
+
+    CREATE TABLE aluno(
+
+    matricula int auto_increment PRIMARY KEY,
+    nome varchar(100) NOT NULL,
+    sobrenome varchar(100),
+    email varchar(100) NOT NULL,
+    senha varchar(15) NOT NULL,
+    cpf varchar(100) NOT NULL,
+    data_nasc date NOT NULL,
+    id_usuario int NOT NULL,
+    id_turma int,
+    sim int
+
+    );
+
+    CREATE TABLE estado_m(
+    sim int PRIMARY KEY,
+    descricao varchar(100)
+    );
+
+    CREATE TABLE estado_c(
+    id_estado int PRIMARY KEY,
+    descricao varchar (100)
+    );
+
+    CREATE TABLE boletim(
+
+    id_boletim int auto_increment PRIMARY KEY,
+    frequencia int NOT NULL,
+    n1 decimal(3,1) NOT NULL,
+    n2 decimal(3,1) NOT NULL,
+    n3 decimal(3,1) NOT NULL,
+    media decimal(3,1) NOT NULL,
+    matricula int NOT NULL,
+    id_componente int NOT NULL,
+    obs varchar(100)
+
+    );
+
+    CREATE TABLE componente(
+
+    id_componente int auto_increment PRIMARY KEY,
+    nome varchar(100) NOT NULL,
+    modulo varchar(10) NOT NULL,
+    conteudo varchar(100) NOT NULL,
+    duracao int,
+    id_professor int NOT NULL
+
+
+    );
+
+    CREATE TABLE curso(
+
+    id_curso int auto_increment PRIMARY KEY,
+    nome varchar(100) NOT NULL,
+    carga int NOT NULL
+
+    );
+
+    CREATE TABLE moderador(
+
+    id_moderador int auto_increment PRIMARY KEY,
+    nome varchar(100) NOT NULL,
+    sobrenome varchar(100),
+    email varchar(100) NOT NULL,
+    senha varchar(15) NOT NULL,
+    telefone varchar(20) NOT NULL,
+    id_usuario int NOT NULL
+
+    );
+
+    CREATE TABLE professor(
+
+    id_professor int auto_increment PRIMARY KEY,
+    nome varchar(100) NOT NULL,
+    sobrenome varchar(100),
+    email varchar(100) NOT NULL,
+    senha varchar(15) NOT NULL,
+    telefone varchar(20) NOT NULL,
+    id_usuario int(10),
+    id_turma int
+
+    );
+
+    CREATE TABLE turno(
+    id_turno int PRIMARY KEY,
+    descricao varchar(100)
+    );
+
+    CREATE TABLE turma(
+
+    id_turma int auto_increment PRIMARY KEY,
+    nome varchar(100) NOT NULL,
+    id_curso int NOT NULL,
+    id_turno int
+
+    );
+
+    CREATE TABLE usuario(
+
+    id_usuario int auto_increment PRIMARY KEY,
+    nivel ENUM('Aluno', 'Professor', 'Moderador') NOT NULL
+
+    );
+
+    CREATE TABLE comptur(
+    id_comptur int auto_increment PRIMARY KEY,
+    id_componente int NOT NULL,
+    id_turma int NOT NULL,
+    id_estado int
+
+    );
+
+    CREATE TABLE profbol(
+    id_profbol int auto_increment PRIMARY KEY,
+    id_boletim int NOT NULL,
+    id_professor int NOT NULL
+
+    );
+
+
+    ALTER TABLE aluno ADD FOREIGN KEY(id_usuario) REFERENCES usuario(id_usuario);
+    ALTER TABLE aluno ADD FOREIGN KEY(id_turma) REFERENCES turma(id_turma);
+    ALTER TABLE aluno ADD FOREIGN KEY(sim) REFERENCES estado_m(sim);
+
+    ALTER TABLE boletim ADD FOREIGN KEY(matricula) REFERENCES aluno(matricula);
+    ALTER TABLE boletim ADD FOREIGN KEY(id_componente) REFERENCES componente(id_componente);
+
+
+    ALTER TABLE componente ADD FOREIGN KEY(id_professor) REFERENCES professor(id_professor);
+
+
+    ALTER TABLE moderador ADD FOREIGN KEY(id_usuario) REFERENCES usuario(id_usuario);
+
+    ALTER TABLE professor ADD FOREIGN KEY(id_usuario) REFERENCES usuario(id_usuario);
+    ALTER TABLE professor ADD FOREIGN KEY(id_turma) REFERENCES turma(id_turma);
+
+    ALTER TABLE turma ADD FOREIGN KEY(id_curso) REFERENCES curso(id_curso);
+    ALTER TABLE turma ADD FOREIGN KEY(id_turno) REFERENCES turno(id_turno);
+
+
+    ALTER TABLE comptur ADD FOREIGN KEY(id_componente) REFERENCES componente(id_componente);
+    ALTER TABLE comptur ADD FOREIGN KEY(id_turma) REFERENCES turma(id_turma);
+    ALTER TABLE comptur ADD FOREIGN KEY(id_estado) REFERENCES estado_c(id_estado);
+
+    ALTER TABLE profbol ADD FOREIGN KEY(id_professor) REFERENCES professor(id_professor);
+    ALTER TABLE profbol ADD FOREIGN KEY(id_boletim) REFERENCES boletim(id_boletim);
