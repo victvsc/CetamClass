@@ -52,6 +52,15 @@ function exibirNomeUsuario() {
     color: white;
     /* Texto branco */
 }
+
+.container {
+    transition: transform 0.3s ease; /* Transição suave para transform */
+}
+
+.container.shifted {
+    transform: translateX(-250px); /* Ajuste conforme a largura da sua navbar */
+}
+
 </style>
 <body>
 
@@ -87,7 +96,7 @@ function exibirNomeUsuario() {
 </div>
 
 <!-- Conteúdo Principal -->
-<div class="container mt-4">
+<div class="container mt-4" id="main-content">
     <h1>Bem-vindo, <?php echo exibirNomeUsuario(); ?>!</h1>
     <div class="row">
         <!-- Avisos -->
@@ -106,24 +115,6 @@ function exibirNomeUsuario() {
             </div>
         </div>
         
-        <!-- Notas -->
-        <div class="col-md-6">
-            <div class="card custom-card">
-                <div class="card-header">
-                    <h5>Minhas Notas</h5>
-                </div>
-                <div class="card-body">
-                    <ul>
-                        <li>Matemática: 8.5</li>
-                        <li>Português: 9.0</li>
-                        <li>História: 7.5</li>
-                        <li>Ciências: 10.0</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Acesso Rápido -->
     <div class="row">
         <div class="col-md-12">
@@ -140,6 +131,20 @@ function exibirNomeUsuario() {
         </div>
     </div>
 </div>
+
+<script>
+    const navToggle = document.getElementById('nav-toggle');
+    const mainContent = document.getElementById('main-content');
+
+    navToggle.addEventListener('change', () => {
+        if (navToggle.checked) {
+            mainContent.classList.add('shifted');
+        } else {
+            mainContent.classList.remove('shifted');
+        }
+    });
+</script>
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

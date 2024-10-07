@@ -85,6 +85,15 @@ function exibirNomeUsuario() {
   tbody tr:nth-child(even) {
     background-color: #ffffff;
   }
+
+  .container {
+    transition: transform 0.3s ease; /* Transição suave para transform */
+}
+
+.container.shifted {
+    transform: translateX(-250px); /* Ajuste conforme a largura da sua navbar */
+}
+
   </style>
 <body>
 <!-- partial:index.partial.html -->
@@ -118,7 +127,7 @@ function exibirNomeUsuario() {
 </div>
 <!-- partial -->
 <title>Tabela Curricular</title>
-<div class="container mt-5">
+<div class="container mt-5" id="main-content">
     <h1 class="text-center mb-4">Módulos e Componentes Curriculares</h1>
     <div class="table-responsive w-75 ms-auto">
         <table class="table table-bordered">
@@ -305,6 +314,19 @@ function exibirNomeUsuario() {
         </table>
     </div>
 </div>
+
+<script>
+    const navToggle = document.getElementById('nav-toggle');
+    const mainContent = document.getElementById('main-content');
+
+    navToggle.addEventListener('change', () => {
+        if (navToggle.checked) {
+            mainContent.classList.add('shifted');
+        } else {
+            mainContent.classList.remove('shifted');
+        }
+    });
+</script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
