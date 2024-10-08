@@ -85,27 +85,68 @@ function exibirNomeUsuario() {
   </div>
 </div>
 <div class="content">
-<div class="announcements">
-  <div class="announcement-container">
-      <div class="announcement">
-          <i class="fas fa-bell"></i>
-          <strong>Reunião de pais:</strong> próxima quinta-feira às 19h.
+  <div class="announcement-section">
+    <h2>Avisos</h2>
+    <div class="row">
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://static.vecteezy.com/system/resources/previews/029/694/993/original/happy-family-icon-flat-style-mom-dad-and-child-of-parents-symbol-for-your-web-site-design-logo-app-ui-illustration-design-vector.jpg" class="card-img-top" alt="Imagem de Reunião">
+          <div class="card-body">
+            <h5 class="card-title">Reunião de pais</h5>
+            <p class="card-text">Próxima quinta-feira às 19h.</p>
+            <a href="#" class="btn btn-warning"><i class="fas fa-bell"></i> Detalhes</a>
+          </div>
+        </div>
       </div>
-      <div class="announcement">
-          <i class="fas fa-bell"></i>
-          <strong>Prazos:</strong> Entrega de trabalhos até 15 de outubro.
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/588/588423.png" class="card-img-top" alt="Imagem de Prazos">
+          <div class="card-body">
+            <h5 class="card-title">Prazos</h5>
+            <p class="card-text">Entrega de trabalhos até 15 de outubro.</p>
+            <a href="#" class="btn btn-warning"><i class="fas fa-bell"></i> Detalhes</a>
+          </div>
+        </div>
       </div>
-      <div class="announcement">
-          <i class="fas fa-bell"></i>
-          <strong>Novidades:</strong> Novas atividades foram adicionadas à biblioteca.
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/2702/2702154.png" class="card-img-top" alt="Imagem de Novidades">
+          <div class="card-body">
+            <h5 class="card-title">Novidades</h5>
+            <p class="card-text">Novas atividades foram adicionadas à biblioteca.</p>
+            <a href="#" class="btn btn-warning"><i class="fas fa-bell"></i> Detalhes</a>
+          </div>
+        </div>
       </div>
-      <!-- Adicione mais avisos aqui se necessário -->
+    </div>
   </div>
 </div>
 
+<script>
+  document.getElementById('nav-toggle').addEventListener('change', function() {
+    const sidebar = document.getElementById('nav-bar');
+    const content = document.querySelector('.content');
+
+    if (this.checked) {
+      sidebar.classList.add('closed');
+      content.classList.add('closed');
+    } else {
+      sidebar.classList.remove('closed');
+      content.classList.remove('closed');
+    }
+  });
+</script>
+
+
+
 <script type="text/javascript" src="../../moderador-pages/js/bootstrap.js"></script>
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-            <script type="text/javascript" src="../../moderador-pages/js/codigos.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="../../moderador-pages/js/codigos.js"></script>
+</body>
 </body>
 </html>
