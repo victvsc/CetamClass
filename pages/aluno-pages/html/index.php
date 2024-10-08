@@ -61,13 +61,18 @@ function exibirNomeUsuario() {
     transform: translateX(-250px); /* Ajuste conforme a largura da sua navbar */
 }
 
+/* Ajuste padrão para o container */
+.container.mt-4 {
+  margin-left: 22%; /* Ajuste inicial para mover para a direita */
+}
+
 </style>
 <body>
 
 <!-- Navbar -->
 <div id="nav-bar">
   <input id="nav-toggle" type="checkbox"/>
-  <div id="nav-header"><a id="nav-title" href="https://codepen.io" target="_blank">Cetam<i></i>Class</a>
+  <div id="nav-header"><a id="nav-title" href="#" target="_blank">Cetam<i></i>Class</a>
     <label for="nav-toggle"><span id="nav-toggle-burger"></span></label>
     <hr/>
   </div>
@@ -114,9 +119,52 @@ function exibirNomeUsuario() {
                 </div>
             </div>
         </div>
-        
+
+        <!-- Carrossel -->
+        <div class="col-md-6">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://www.cetam.am.gov.br/wp-content/uploads/2024/05/Prancheta-1@4x-3.png" class="d-block w-100" alt="Slide 1">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5></h5>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://www.cetam.am.gov.br/wp-content/uploads/2024/05/Prancheta-1-copia@4x-2.png" class="d-block w-100" alt="Slide 2">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5></h5>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://www.cetam.am.gov.br/wp-content/uploads/2024/05/Prancheta-1-copia-6@4x.png" class="d-block w-100" alt="Slide 3">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5></h5>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Acesso Rápido -->
-    <div class="row">
+    <div class="row mt-4">
         <div class="col-md-12">
             <div class="card custom-card">
                 <div class="card-header">

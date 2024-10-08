@@ -20,11 +20,11 @@
   --background: #ffffff;
   --navbar-width: 256px;
   --navbar-width-min: 80px;
-  --navbar-dark-primary: #007BFF;
+  --navbar-dark-primary: #1c86ee;
   --navbar-light-primary: #ffffff;
   --navbar-light-secondary: #ffffff;
   --shadow-color: rgba(0, 0, 0, 0.1);
-  --button-primary: #007bff;
+  --button-primary: #1c86ee;
   --button-primary-hover: #0056b3;
   --border-color: #ddd;
   --text-color: #333;
@@ -711,4 +711,23 @@ label[for="nav-footer-toggle"] {
   color: var(--navbar-light-secondary);
   font-size: 0.8rem;
   overflow: auto;
+}
+
+/* Ajuste padrão para o container */
+.container.mt-4 {
+  margin-left: 25%; /* Ajuste inicial para mover para a direita */
+}
+
+/* Para telas menores (por exemplo, dispositivos móveis), mova menos o container */
+@media (max-width: 768px) {
+  .container.mt-4 {
+      margin-left: 10%; /* Ajuste menor para telas menores */
+  }
+}
+
+/* Para telas muito pequenas (celulares), centralize o conteúdo */
+@media (max-width: 576px) {
+  .container.mt-4 {
+      margin-left: 5%; /* Centralizado */
+  }
 }

@@ -78,6 +78,28 @@ function exibirNomeUsuario() {
     font-size: 24px;
     margin-right: 10px;
   }
+
+
+.content {
+  margin-left: 250px; /* Move o conteúdo para a direita quando a sidebar está aberta */
+  transition: margin-left 0.3s ease, transform 0.3s ease; /* Adiciona a transição de transformação */
+  transform: translateX(0); /* Posição inicial do conteúdo */
+}
+
+.content.closed {
+  transform: translateX(-10%); /* Move os cards levemente para a esquerda quando a sidebar fecha */
+}
+
+/* Estilizando os cards */
+.announcement-section {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  transition: transform 0.3s ease; /* Transição para os cards */
+}
+
 </style>
 
   </style>
@@ -85,7 +107,7 @@ function exibirNomeUsuario() {
 <!-- partial:index.partial.html -->
 <div id="nav-bar">
   <input id="nav-toggle" type="checkbox"/>
-  <div id="nav-header"><a id="nav-title" href="https://codepen.io" target="_blank">Cetam<i></i>Class</a>
+  <div id="nav-header"><a id="nav-title" href="#" target="_blank">Cetam<i></i>Class</a>
     <label for="nav-toggle"><span id="nav-toggle-burger"></span></label>
     <hr/>
   </div>
@@ -115,22 +137,59 @@ function exibirNomeUsuario() {
 <div class="content">
   <div class="announcement-section">
     <h2>Avisos</h2>
-    <div class="announcement-container">
-      <div class="announcement">
-        <i class="fas fa-bell"></i>
-        <strong>Reunião de pais:</strong> próxima quinta-feira às 19h.
+    <div class="row">
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://static.vecteezy.com/system/resources/previews/029/694/993/original/happy-family-icon-flat-style-mom-dad-and-child-of-parents-symbol-for-your-web-site-design-logo-app-ui-illustration-design-vector.jpg" class="card-img-top" alt="Imagem de Reunião">
+          <div class="card-body">
+            <h5 class="card-title">Reunião de pais</h5>
+            <p class="card-text">Próxima quinta-feira às 19h.</p>
+            <a href="#" class="btn btn-warning"><i class="fas fa-bell"></i> Detalhes</a>
+          </div>
+        </div>
       </div>
-      <div class="announcement">
-        <i class="fas fa-bell"></i>
-        <strong>Prazos:</strong> Entrega de trabalhos até 15 de outubro.
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/588/588423.png" class="card-img-top" alt="Imagem de Prazos">
+          <div class="card-body">
+            <h5 class="card-title">Prazos</h5>
+            <p class="card-text">Entrega de trabalhos até 15 de outubro.</p>
+            <a href="#" class="btn btn-warning"><i class="fas fa-bell"></i> Detalhes</a>
+          </div>
+        </div>
       </div>
-      <div class="announcement">
-        <i class="fas fa-bell"></i>
-        <strong>Novidades:</strong> Novas atividades foram adicionadas à biblioteca.
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/2702/2702154.png" class="card-img-top" alt="Imagem de Novidades">
+          <div class="card-body">
+            <h5 class="card-title">Novidades</h5>
+            <p class="card-text">Novas atividades foram adicionadas à biblioteca.</p>
+            <a href="#" class="btn btn-warning"><i class="fas fa-bell"></i> Detalhes</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  document.getElementById('nav-toggle').addEventListener('change', function() {
+    const sidebar = document.getElementById('nav-bar');
+    const content = document.querySelector('.content');
+
+    if (this.checked) {
+      sidebar.classList.add('closed');
+      content.classList.add('closed');
+    } else {
+      sidebar.classList.remove('closed');
+      content.classList.remove('closed');
+    }
+  });
+</script>
+
 
 
 <script type="text/javascript" src="../../moderador-pages/js/bootstrap.js"></script>

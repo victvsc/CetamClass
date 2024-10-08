@@ -53,12 +53,24 @@ function exibirNomeUsuario() {
     color: white;
     /* Texto branco */
 }
+
+/* Transição para o carrossel */
+.carousel-container {
+    transition: transform 0.5s ease; /* Suave transição */
+    margin-left: 25%;
+}
+
+.carousel-container.shifted {
+    transform: translateX(-250px); /* Move para a esquerda quando a sidebar estiver aberta */
+}
+
+
 </style>
 <body>
     <!-- Navbar -->
     <div id="nav-bar">
   <input id="nav-toggle" type="checkbox"/>
-  <div id="nav-header"><a id="nav-title" href="https://codepen.io" target="_blank">Cetam<i></i>Class</a>
+  <div id="nav-header"><a id="nav-title" href="#" target="_blank">Cetam<i></i>Class</a>
     <label for="nav-toggle"><span id="nav-toggle-burger"></span></label>
     <hr/>
   </div>
@@ -114,6 +126,20 @@ function exibirNomeUsuario() {
     </div>
 
 <!-- partial -->
+
+<script>
+    const navToggle = document.getElementById('nav-toggle');
+    const carouselContainer = document.querySelector('.carousel-container');
+
+    navToggle.addEventListener('change', () => {
+        if (navToggle.checked) {
+            carouselContainer.classList.add('shifted'); // Adiciona a classe para mover o carrossel
+        } else {
+            carouselContainer.classList.remove('shifted'); // Remove a classe quando a sidebar é fechada
+        }
+    });
+</script>
+
 <script type="text/javascript" src="../../moderador-pages/js/bootstrap.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
